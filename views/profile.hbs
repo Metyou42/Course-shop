@@ -1,0 +1,63 @@
+<div class='profile' id='profile'>
+    <div class='row'>
+        <div class='col s4'>
+            {{#if user.avatarUrl}}
+                <img class='avatar' src='/{{user.avatarUrl}}' alt='Ошибка' />
+            {{else}}
+                <p>Аватара нет</p>
+            {{/if}}
+        </div>
+        <div class='col s8'>
+            <form action='/profile' method='POST' enctype='multipart/form-data'>
+                <div class='input-field'>
+                    <input id='name' name='name' type='text' class='validate' value='{{user.name}}' />
+                    <label for='name'>Имя</label>
+                    <span id='helper-name' class='helper-text' data-error='Введите имя'></span>
+                </div>
+                <div class='input-field'>
+                    <input id='email' type='text' class='validate' disabled value='{{user.email}}' />
+                    <label for='email'>Email</label>
+                </div>
+                <div class='file-field input-field'>
+                    <div class='btn'>
+                        <span>Сменить аватар</span>
+                        <input type='file' name='avatar' id='avatar' />
+                    </div>
+                    <div class='file-path-wrapper'>
+                        <input class='file-path validate' type='text' value='название файла' />
+                    </div>
+                </div>
+                <input id='id' name='id' type='hidden' value='{{course.id}}' />
+                <input type='hidden' id='csrf' name='_csrf' value='{{csrf}}' />
+                <button type='button' class='btn btn-primary margin red'>Изменить</button>
+            </form>
+        </div>
+    </div>
+    <h3 class='center'>Ваши курсы</h3>
+    <div class='row'>
+        <div class='col s12'>
+            {{#if course}}
+                <table class='highlight'>
+                    <thead>
+                        <tr>
+                            <th>Навзание</th>
+                            <th>Цена</th>
+                            <th>Продано</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each course}}
+                            <tr>
+                                <td>{{title}}</td>
+                                <td>{{price}}</td>
+                                <td>{{countBuy}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{else}}
+                <p>Ваших курсов нет</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

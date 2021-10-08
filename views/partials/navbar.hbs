@@ -1,0 +1,114 @@
+<nav>
+    <div class='nav-wrapper'>
+        <a href='/' class='brand-logo'>Coursera</a>
+        <a href='#' class='sidenav-trigger' data-target='slide-out'><i class='material-icons'>menu</i></a>
+        <ul id='' class='hide-on-med-and-down right'>
+            {{#if isHomePage}}
+                <li class='active'><a href='/'>Главная страница</a></li>
+            {{else}}
+                <li><a href='/'>Главная страница</a></li>
+            {{/if}}
+
+            {{#if isCoursesPage}}
+                <li class='active'><a href='/courses'>Курсы</a></li>
+            {{else}}
+                <li><a href='/courses'>Курсы</a></li>
+            {{/if}}
+
+            {{#if isAuth}}
+                {{#if isAddPage}}
+                    <li class='active'><a href='/add'>Добавить курс</a></li>
+                {{else}}
+                    <li><a href='/add'>Добавить курс</a></li>
+                {{/if}}
+
+                {{#if isCardPage}}
+                    <li class='active'><a href='/card'>Корзина</a></li>
+                {{else}}
+                    <li><a href='/card'>Корзина</a></li>
+                {{/if}}
+
+                {{#if isOrdersPage}}
+                    <li class='active'><a href='/orders'>Заказы</a></li>
+                {{else}}
+                    <li><a href='/orders'>Заказы</a></li>
+                {{/if}}
+
+                {{#if isProfilePage}}
+                    <li class='active'><a href='/profile'>Профиль</a></li>
+                {{else}}
+                    <li><a href='/profile'>Профиль</a></li>
+                {{/if}}
+
+                <li><a href='/auth/logOut'>Выйти</a></li>
+            {{else}}
+                {{#if isLoginPage}}
+                    <li class='active'><a href='/auth/login'>Вход</a></li>
+                {{else}}
+                    <li><a href='/auth/login'>Вход</a></li>
+                {{/if}}
+
+                {{#if isRegisterPage}}
+                    <li class='active'><a href='/auth/register'>Регистрация</a></li>
+                {{else}}
+                    <li><a href='/auth/register'>Регистрация</a></li>
+                {{/if}}
+            {{/if}}
+
+        </ul>
+    </div>
+</nav>
+
+<ul id='slide-out' class='sidenav'>
+    {{#if isHomePage}}
+        <li class='active'><a href='/'><i class='material-icons'>home</i>Главная страница</a></li>
+    {{else}}
+        <li><a href='/'><a href='/'><i class='material-icons'>home</i>Главная страница</a></li>
+    {{/if}}
+
+    {{#if isCoursesPage}}
+        <li class='active'><a href='/courses'><i class='material-icons'>local_grocery_store</i>Курсы</a></li>
+    {{else}}
+        <li><a href='/courses'><i class='material-icons'>local_grocery_store</i>Курсы</a></li>
+    {{/if}}
+
+    {{#if isAuth}}
+        {{#if isAddPage}}
+            <li class='active'><a href='/add'><i class='material-icons'>add</i>Добавить курс</a></li>
+        {{else}}
+            <li><a href='/add'><i class='material-icons'>add</i>Добавить курс</a></li>
+        {{/if}}
+
+        {{#if isCardPage}}
+            <li class='active'><a href='/card'><i class='material-icons'>add_shopping_cart</i>Корзина</a></li>
+        {{else}}
+            <li><a href='/card'><i class='material-icons'>add_shopping_cart</i>Корзина</a></li>
+        {{/if}}
+
+        {{#if isOrdersPage}}
+            <li class='active'><a href='/orders'><i class='material-icons'>library_books</i>Заказы</a></li>
+        {{else}}
+            <li><a href='/orders'><i class='material-icons'>library_books</i>Заказы</a></li>
+        {{/if}}
+
+        {{#if isProfilePage}}
+            <li class='active'><a href='/profile'><i class='material-icons'>account_box</i>Профиль</a></li>
+        {{else}}
+            <li><a href='/profile'><i class='material-icons'>account_box</i>Профиль</a></li>
+        {{/if}}
+
+        <li><a href='/auth/logOut'><i class='material-icons'>arrow_back</i>Выйти</a></li>
+    {{else}}
+        {{#if isLoginPage}}
+            <li class='active'><a href='/auth/login'><i class='material-icons'>account_circle</i>Вход</a></li>
+        {{else}}
+            <li><a href='/auth/login'><i class='material-icons'>account_circle</i>Вход</a></li>
+        {{/if}}
+
+        {{#if isRegisterPage}}
+            <li class='active'><a href='/auth/register'><i class='material-icons'>person_add</i>Регистрация</a></li>
+        {{else}}
+            <li><a href='/auth/register'><i class='material-icons'>person_add</i>Регистрация</a></li>
+        {{/if}}
+    {{/if}}
+</ul>

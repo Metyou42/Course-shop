@@ -1,0 +1,12 @@
+<div class='course'>
+    <h1>{{title}}</h1>
+
+    <img src='/{{course.img}}' alt='{{course.title}}' />
+    <p class='price big'>{{course.price}}</p>
+
+    <form action='/profile/{{course.userID}}' method='GET'>
+        <input type='hidden' name='_csrf' value='{{@root.csrf}}' />
+
+        <button type='submit' class='btn btn-primary right'>Открыть профиль создателя</button>
+    </form>
+</div>

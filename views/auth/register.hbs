@@ -1,0 +1,37 @@
+<div class='upmarg'>
+    <div class='row'>
+        <div class='col s12'>
+            <ul class='tabs'>
+                <li class='tab col s6 offset-s3'><a class='active' href='/auth/register'>Зарегестрироватся</a></li>
+            </ul>
+        </div>
+        <div id='register' class='col s12'>
+            <div class='input-field'>
+                <input id='remail' name='email' type='email' class='validate{{emailValidate}}' />
+                <label for='remail'>Email</label>
+                <span id='helper-remail' class='helper-text' data-error='{{emailHelper}}'></span>
+            </div>
+
+            <div class='input-field'>
+                <input id='name' name='name' type='text' class='validate' />
+                <label for='name'>Ваше Имя</label>
+                <span id='helper-name' class='helper-text' data-error='введите имя'></span>
+            </div>
+
+            <div class='input-field'>
+                <input id='rpassword' name='password' type='password' class='validate' />
+                <label for='rpassword'>Пароль</label>
+                <span id='helper-rpassword' class='helper-text' data-error='Введите пароль'></span>
+            </div>
+
+            <div class='input-field'>
+                <input id='confirm' name='confirm' type='password' class='validate' />
+                <label for='confirm'>Пароль повторно:</label>
+                <span id='helper-confirm' class='helper-text' data-error='Введите пароль еще раз'></span>
+            </div>
+            <input type='hidden' id='csrf' name='_csrf' value='{{@root.csrf}}' />
+
+            <button type='submit' class='btn btn-primary'>Зарегестрироватся</button>
+        </div>
+    </div>
+</div>

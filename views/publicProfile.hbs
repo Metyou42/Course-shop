@@ -1,0 +1,49 @@
+<div class='profile' id='profile'>
+    <div class='row'>
+        <div class='col s4'>
+            {{#if user.avatarUrl}}
+                <img class='avatar' src='/{{user.avatarUrl}}' alt='Ошибка' />
+            {{else}}
+                <p>Аватара нет</p>
+            {{/if}}
+        </div>
+        <div class='col s8'>
+            <div class='input-field'>
+                <input id='name' name='name' type='text' class='file-path validate' disabled value='{{user.name}}' />
+                <label for='name'>Имя</label>
+                <span id='helper-name' class='helper-text' data-error='Введите имя'></span>
+            </div>
+            <div class='input-field'>
+                <input id='email' type='text' class='file-path' disabled value='{{user.email}}' />
+                <label for='email'>Email</label>
+            </div>
+        </div>
+    </div>
+    <h3 class='center'>Курсы {{user.name}}</h3>
+    <div class='row'>
+        <div class='col s12'>
+            {{#if course}}
+                <table class='highlight'>
+                    <thead>
+                        <tr>
+                            <th>Навзание</th>
+                            <th>Цена</th>
+                            <th>Продано</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each course}}
+                            <tr>
+                                <td>{{title}}</td>
+                                <td>{{price}}</td>
+                                <td>{{countBuy}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{else}}
+                <p>Курсов {{user.name}} нет</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

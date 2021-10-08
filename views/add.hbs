@@ -1,0 +1,31 @@
+<h1>Добавить новый курс</h1>
+
+<form action='/add' method='POST' enctype='multipart/form-data'>
+    <div id='add_editCourse' class='input-field'>
+        <input id='title' name='title' type='text' class='validate{{invalid}}' value='{{titleCourse}}' />
+        <label for='title'>Название курса</label>
+        <span id='helper-title' class='helper-text' data-error='{{helper}}'></span>
+    </div>
+
+    <div class='input-field'>
+        <input id='price' name='price' type='number' class='validate{{invalid}}' value='{{price}}' />
+        <label for='price'>Цена курса (в доларах)</label>
+        <span id='helper-price' class='helper-text' data-error='{{helper}}'></span>
+    </div>
+
+    <div class='file-field input-field'>
+        <div class='btn'>
+            <span>Обложка курса</span>
+            <input type='file' name='imgCourse' id='imgCourse' />
+        </div>
+        <div class='file-path-wrapper'>
+            <input id='img' class='file-path validate{{invalid}}' type='text' value='название файла' />
+            <span id='helper-img' class='helper-text' data-error='{{helper}}'></span>
+
+        </div>
+    </div>
+
+    <input type='hidden' name='_csrf' value='{{@root.csrf}}' />
+
+    <button type='button' class='btn btn-primary'>Опубликовать</button>
+</form>
