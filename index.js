@@ -67,7 +67,7 @@ app.use(
     saveUninitialized: false,
     store,
     expires: new Date(Date.now() + 1000 * 60 * 60 * 5),
-  }),
+  })
 );
 
 app.use(fileMiddleware.any());
@@ -76,9 +76,8 @@ app.use(csrf());
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(compression());
 
-app.use(variablesMiddleware); // Middleware: add to request in locals (isAuth user and csrf Token) for hbs file
-app.use(userToModels); // Middleware: add to request feild userID object from db, or if user doesnt login, retuen next()
-// also if user is login, add session with feild (userID, isAuthenticated, token) in mongo db
+app.use(variablesMiddleware);
+app.use(userToModels);
 
 app.use('/', homePage);
 app.use('/add', addPage);
